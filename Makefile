@@ -100,6 +100,7 @@ _warden-up:
 .PHONY: _composer-install
 _composer-install:
 	@echo "→ [4/7] Installing Magento $(_M2_VERSION) via Composer (this may take several minutes)"
+	@cd "$(_PROJECT_DIR)" && warden env exec -T php-fpm rm -rf /tmp/m2
 	@cd "$(_PROJECT_DIR)" && warden env exec -T php-fpm composer create-project \
 		--repository-url=https://repo.magento.com/ \
 		magento/project-community-edition=$(_M2_VERSION) \
@@ -112,10 +113,6 @@ _magento-install:
 	@echo "→ [5/7] Running Magento setup:install"
 	@cd "$(_PROJECT_DIR)" && warden env exec -T php-fpm bin/magento setup:install \
 		--base-url=https://app.$(_ENV_NAME).test \
-		--amqp-host=rabbitmq \
-		--amqp-port=5672 \
-		--amqp-user=guest \
-		--amqp-password=guest \
 		--db-host=db \
 		--db-name=magento \
 		--db-user=magento \
