@@ -127,23 +127,6 @@ Sets Magento to developer mode so errors are shown and static content is generat
 | Admin password | `password1` |
 | Database | host `db`, name `magento`, user `magento`, password `magento` |
 
-## Project structure after install
-
-```
-magento-installatio-makefile/
-├── Makefile
-├── README.md
-└── examplemagento/          ← created by the installer
-    ├── .env                 ← Warden environment config
-    ├── .warden/             ← Warden docker-compose overrides
-    ├── app/
-    ├── bin/magento
-    ├── composer.json
-    ├── composer.lock
-    ├── pub/
-    └── vendor/
-```
-
 ## Troubleshooting
 
 **`warden is not installed or not found in PATH`**
