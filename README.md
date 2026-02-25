@@ -2,7 +2,6 @@
 
 A single `make` command that bootstraps a fully configured Magento 2 development environment using [Warden](https://docs.warden.dev).
 
-
 ## Prerequisites
 
 | Tool | Purpose |
