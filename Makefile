@@ -142,6 +142,7 @@ _magento-install:
 		--admin-email=info@customgento.com \
 		--admin-user=admin \
 		--admin-password=password1 \
+		--backend-frontname=admin \
 		--timezone=Europe/Berlin
 
 .PHONY: _magento-configure
